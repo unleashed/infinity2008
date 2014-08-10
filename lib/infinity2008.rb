@@ -4,7 +4,6 @@ module Infinity2008
   class Freak
     { key: ",\n", needs: " " }.each do |m, s|
       (class << self; self; end).send :define_method, m do |arg|
-        #class_eval { define_method(m) { "#{m}#{s}#{arg}" } }
         define_method(m) { "#{m}#{s}#{arg}" } 
       end
     end

@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'infinity2008'
-  spec.version       = '1.0.1'
+  spec.version       = '1.0.2'
   spec.authors       = ["Alejandro Martinez Ruiz"]
   spec.email         = ['alex@flawedcode.org']
   spec.description   = %q{This gem makes Ruby sing along with you the Guru Project's Infinity 2008 (Klaas Vocal Edit) hit}
@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", "~> 3.0"
 end

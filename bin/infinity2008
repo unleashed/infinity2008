@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+$: << File.expand_path('../../lib', __FILE__)
+require 'infinity2008'
+
+def open_cmd
+  case RbConfig::CONFIG['host_os']
+  when /darwin/i
+    { open: 'open', null: '/dev/null' }
+  when /linux|bsd/i
+    { open: 'xdg-open', null: '/dev/null' }
+  when /mswin|mingw|cygwin|/i
+    { open: 'start', null: 'nul' }
+  else
+    raise
+  end
+end
+
+def video(url)
+  cmd = open_cmd
+  `#{cmd[:open]} #{url} > #{cmd[:null]} 2>&1`
+  sleep 2
+rescue
+  nil
+end
+
+video Infinity2008::Song::URL if ARGV.include? '--video'
+Infinity2008::Song.sing

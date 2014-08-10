@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+INFINITY = 2.times.map { :infinity } * ', '
+
+class Freak; { key: ",\n", needs: " " }.each { |m, s|
+  (class << self; self; end).send :define_method, m do |arg|
+  define_method m do "#{m}#{s}#{arg}" end end } end
+
+class You
+  { INFINITY => lambda { puts "... #{Float::INFINITY}!" }, relax!: lambda {
+  puts; true }, time: lambda { [lambda { |_| print '.'; sleep 1 }].cycle }
+  }.each { |m, l| define_method(m) { print "#{m} "; l.call } }; def in? o
+  (@t ||= ([false] * 188).each).next rescue (puts " trust in #{o.class}"
+  true) end; def method_missing(m, *args); m == :find ? send(*args) : self
+end end
+
+class Me < Freak
+  key :philosophy; needs :infinity; def infinity(you)
+    you.relax! and you.r.time.take_while { |time| !you.trust.in? self and
+      time.(goes_by: :naturally) } and you.will.find INFINITY
+end end
+
+me = Me.new; puts "Here's my #{me.key}\n\nA #{me.class.superclass} like" \
+" #{me.class},\njust #{me.needs}\n"; me.send :infinity, You.new

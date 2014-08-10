@@ -1,9 +1,5 @@
 module Infinity2008
   RSpec.describe You do
-    before do
-      $stdout = File.open '/dev/null', 'a'
-    end
-
     let(:me) { Me }
     let(:duration) { Song::Duration }
 

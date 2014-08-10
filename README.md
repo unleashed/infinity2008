@@ -4,6 +4,20 @@
 
 This gem makes Ruby sing with you the [Guru Josh Project's Infinity 2008 (Klaas Vocal Edit)](https://www.youtube.com/watch?v=w9KnuJZkBjg) song through both *STDOUT* and the *SOURCE CODE*.
 
+The really nice thing is that the code actually sings the lyrics:
+```ruby
+class Me < Freak
+  key :philosophy
+  needs :infinity
+
+  def infinity(you)
+    you.relax! and you.r.time.take_while { |time|
+      !you.trust.in? self and time.(goes_by: :naturally)
+    } and you.will.find INFINITY
+  end
+end
+```
+
 ## Usage
 
 You should start the song at the same time than this program with something like this:

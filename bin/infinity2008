@@ -23,5 +23,10 @@ rescue
   nil
 end
 
-video Infinity2008::Song::URL if ARGV.include? '--video'
-Infinity2008::Song.sing
+begin
+  video Infinity2008::Song::URL if ARGV.include? '--video'
+  Infinity2008::Song.sing
+rescue Interrupt
+  puts
+  exit 130
+end

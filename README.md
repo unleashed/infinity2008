@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/unleashed/infinity2008.svg?branch=master)](https://travis-ci.org/unleashed/infinity2008)
+[![Build Status](https://travis-ci.org/unleashed/infinity2008.svg?branch=master)](https://travis-ci.org/unleashed/infinity2008) [![Code Climate](https://codeclimate.com/github/unleashed/infinity2008/badges/gpa.svg)](https://codeclimate.com/github/unleashed/infinity2008) [![Test Coverage](https://codeclimate.com/github/unleashed/infinity2008/badges/coverage.svg)](https://codeclimate.com/github/unleashed/infinity2008)
 
 # The Infinity 2008 (Klaas Vocal Edit) gem
 

@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'infinity2008'
-  spec.version       = '1.0.5'
+  spec.version       = '1.0.6'
   spec.authors       = ["Alejandro Martinez Ruiz"]
   spec.email         = ['alex@flawedcode.org']
   spec.description   = %q{This gem makes Ruby sing along with you the Guru Project's Infinity 2008 (Klaas Vocal Edit) hit}

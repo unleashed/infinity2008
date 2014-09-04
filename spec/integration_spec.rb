@@ -18,7 +18,7 @@ module Infinity2008
 
         it 'writes to standard output' do
           allow_any_instance_of(Kernel).to receive(:sleep)
-          expect($stdout).to receive(:puts).at_least(:once)
+          expect(subject).to receive(:puts).at_least(:once)
           Song.sing
         end
       end

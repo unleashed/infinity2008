@@ -4,7 +4,7 @@ module Infinity2008
   class Freak
     { key: ",\n", needs: " " }.each do |m, s|
       (class << self; self; end).send :define_method, m do |arg|
-        define_method(m) { "#{m}#{s}#{arg}" } 
+        define_method(m) { "#{m}#{s}#{arg}" }
       end
     end
 
@@ -53,7 +53,7 @@ module Infinity2008
       me = Me.new
       puts "Here's my #{me.key}\n\nA #{me.class.superclass} like" \
         " #{me.class},\njust #{me.needs}\n"
-      me.send :infinity, You.new 
+      me.send :infinity, You.new
     end
   end
 end

@@ -1,4 +1,5 @@
 module Infinity2008
+  VERSION = '1.1.0'
   INFINITY = 2.times.map { :infinity } * ', '
 
   class Freak

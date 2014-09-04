@@ -2,6 +2,21 @@
 $: << File.expand_path('../../lib', __FILE__)
 require 'infinity2008'
 
+def version(do_exit = true)
+  puts "infinity2008 version #{Infinity2008::VERSION}"
+  exit 0 if do_exit
+end
+
+def help
+  version false
+  puts  "\nusage: infinity2008 [option]\n\n" \
+        "Available options:\n" \
+        "\t--video\t\tOpen up a browser with the song's video\n" \
+        "\t--version\tShow this program's version\n" \
+        "\t--help\t\tShow this help screen\n"
+  exit 0
+end
+
 def open_cmd
   case RbConfig::CONFIG['host_os']
   when /darwin/i
@@ -24,6 +39,8 @@ rescue
 end
 
 begin
+  help if ARGV.include? '--help'
+  version if ARGV.include? '--version'
   video Infinity2008::Song::URL if ARGV.include? '--video'
   Infinity2008::Song.sing
 rescue Interrupt

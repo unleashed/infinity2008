@@ -4,14 +4,24 @@ module Infinity2008
     let(:you) { You }
     let(:duration) { Song::Duration }
 
-    it 'will take time' do
-      slept = 0
-      allow_any_instance_of(Kernel).to receive(:sleep) do |_, secs|
-        slept += secs
-        secs
+    context Song do
+      describe '.sing' do
+        it 'will take time' do
+          slept = 0
+          allow_any_instance_of(Kernel).to receive(:sleep) do |_, secs|
+            slept += secs
+            secs
+          end
+          Song.sing
+          expect(slept).to be >= duration
+        end
+
+        it 'writes to standard output' do
+          allow_any_instance_of(Kernel).to receive(:sleep)
+          expect($stdout).to receive(:puts).at_least(:once)
+          Song.sing
+        end
       end
-      me.new.infinity(you.new) 
-      expect(slept).to be >= duration
     end
 
     context You do

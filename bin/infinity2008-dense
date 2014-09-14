@@ -6,11 +6,11 @@ class Freak; { key: ",\n", needs: " " }.each { |m, s|
   define_method m do "#{m}#{s}#{arg}" end end } end
 
 class You
-  { INFINITY => -> { puts "... #{Float::INFINITY}!" }, relax!: -> {
-  puts; true }, time: -> { [->(_) { print '.'; sleep 1 }].cycle } }.
-  each { |m, l| define_method(m) { print "#{m} "; l.call } }; def in? o
-  (@t ||= ([false] * 188).each).next rescue (puts " trust in #{o.class}"
-  true) end; def method_missing(m, *args); m == :find ? send(*args) : self
+  { INFINITY => -> { puts "... #{Float::INFINITY}!" }, relax!: -> { puts
+  true }, time: -> { [->(_) { print '.'; sleep 1 }].cycle } }.each { |m,
+  l| define_method(m) { print "#{m} "; l.call } }; def in? o; (@t ||= (
+  [false] * 188).each).next rescue (puts " trust in #{o.class}"; true)
+  end; def method_missing(m, *args); m == :find ? send(*args) : self
 end end
 
 class Me < Freak
@@ -19,5 +19,5 @@ class Me < Freak
       time.(goes_by: :naturally) } and you.will.find INFINITY
 end end
 
-me = Me.new; puts "Here's my #{me.key}\n\nA #{me.class.superclass} like" \
-" #{me.class},\njust #{me.needs}\n"; me.send :infinity, You.new
+me = Me.new; puts "Here's my #{me.key}\n\nA #{me.class.superclass} " \
+  "like #{me.class},\njust #{me.needs}\n"; me.send :infinity, You.new

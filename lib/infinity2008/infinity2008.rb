@@ -14,10 +14,10 @@ module Infinity2008
   end
 
   class You
-    { INFINITY => lambda { puts "... #{Float::INFINITY}!" },
-      relax!: lambda { puts; true },
-      time: lambda do
-        [lambda { |_| print '.'; sleep 1 }].cycle
+    { INFINITY => -> { puts "... #{Float::INFINITY}!" },
+      relax!: -> { puts; true },
+      time: -> do
+        [->(_) { print '.'; sleep 1 }].cycle
       end
     }.each do |m, l|
       define_method(m) { print "#{m} "; l.call }

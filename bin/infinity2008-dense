@@ -6,9 +6,9 @@ class Freak; { key: ",\n", needs: " " }.each { |m, s|
   define_method m do "#{m}#{s}#{arg}" end end } end
 
 class You
-  { INFINITY => lambda { puts "... #{Float::INFINITY}!" }, relax!: lambda {
-  puts; true }, time: lambda { [lambda { |_| print '.'; sleep 1 }].cycle }
-  }.each { |m, l| define_method(m) { print "#{m} "; l.call } }; def in? o
+  { INFINITY => -> { puts "... #{Float::INFINITY}!" }, relax!: -> {
+  puts; true }, time: -> { [->(_) { print '.'; sleep 1 }].cycle } }.
+  each { |m, l| define_method(m) { print "#{m} "; l.call } }; def in? o
   (@t ||= ([false] * 188).each).next rescue (puts " trust in #{o.class}"
   true) end; def method_missing(m, *args); m == :find ? send(*args) : self
 end end

@@ -46,8 +46,9 @@ module Infinity2008
   end
 
   module Song
+    StartWait = 4
     Duration = 188
-    URL = 'https://www.youtube.com/watch?v=w9KnuJZkBjg'
+    URL = 'https://youtube.com/watch?v=yeKpRl3-Uh0'
 
     def self.sing
       me = Me.new

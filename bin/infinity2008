@@ -41,7 +41,10 @@ end
 begin
   help if ARGV.include? '--help'
   version if ARGV.include? '--version'
-  video Infinity2008::Song::URL if ARGV.include? '--video'
+  if ARGV.include? '--video'
+    video Infinity2008::Song::URL
+    sleep Infinity2008::Song::StartWait
+  end
   Infinity2008::Song.sing
 rescue Interrupt
   puts
